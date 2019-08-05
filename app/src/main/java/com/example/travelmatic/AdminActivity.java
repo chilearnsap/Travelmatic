@@ -7,30 +7,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
-
+public class AdminActivity extends AppCompatActivity {
     Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_admin);
 
         toolbar = findViewById(R.id.toolbar);
 
-        toolbar.inflateMenu(R.menu.main_activity_tool_bar_action);
+        toolbar.inflateMenu(R.menu.admin_activity_tool_bar);
 
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.new_travel:
+                    case R.id.save:
                         startActivity(new Intent(getApplicationContext(),NewTravelDetailsActivity.class));
                 }
                 return false;
             }
         });
-
     }
 }
